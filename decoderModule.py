@@ -22,8 +22,10 @@ def decodes(code,advancekey):
 		if char_to_explore.isalpha():
 			index_list = list_alphabet.index(char_to_explore)
 			decode_index = index_list + int(advancekey)
-			if decode_index > 25:
+			while decode_index > 25:
 				decode_index = decode_index-26
+
+			if decode_index > 25:
 				decoded_string = decoded_string + list_alphabet[decode_index]
 			else:
 				decoded_string = decoded_string + list_alphabet[decode_index]
@@ -31,8 +33,9 @@ def decodes(code,advancekey):
 		if char_to_explore.isdigit():
 			index_list = list_number.index(char_to_explore)
 			decode_index = index_list + int(advancekey)
-			if decode_index > 9:
+			while decode_index > 9:
 				decode_index = decode_index-10
+			if decode_index > 9:
 				decoded_string = decoded_string + list_number[decode_index]
 			else:
 				decoded_string = decoded_string + list_number[decode_index]
